@@ -2,6 +2,8 @@
 
 > A Project to Generate Pixel Art using [nerijs/pixel-art-xl](https://huggingface.co/nerijs/pixel-art-xl).
 
+** NOTE: To Use the Project, you need an API Key from HugginFace. **
+
 ## Build Setup
 
 ``` bash
