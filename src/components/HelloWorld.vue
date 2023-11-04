@@ -4,8 +4,10 @@
     <div class="sm:grid sm:grid-cols-10">
     <img @load="grabColors" class="text-center items-center p-2 col-span-4" v-if="imageData" v-bind:src="imageData" />
     <div class="col-span-6 p-2">
+      <span :style="{color: mainTextColor}">Prompt: </span>
     <input class="w-full py-2 px-1 border-2" type="text" v-model="prompt" placeholder="Enter a prompt">
     <br>
+    <span :style="{color: mainTextColor}">HuggingFace API Key: </span>
     <input class="w-full py-2 px-1 border-2" :type="showAPIKey ? 'text' : 'password'" v-model="hfAPIKey" placeholder="Enter a Valid HuggingFace API Key">
     <button :style="buttonStyle" class="py-2 px-1 rounded transition-all" @click="toggleAPIKeyVisibility">
       {{ showAPIKey ? 'Hide Key' : 'Show Key' }}
