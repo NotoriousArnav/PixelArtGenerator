@@ -2,24 +2,22 @@
   <div class="m-4 p-2 hello">
     <h1 :style="{ color: mainTextColor }" class="text-4xl">Pixel Art Generator</h1>
     <div class="sm:grid sm:grid-cols-10">
-    <img :alt="prompt" @load="grabColors" class="text-center items-center p-2 col-span-4" v-if="imageData" v-bind:src="imageData" />
+    <img :alt="prompt" @load="grabColors" class="text-center rounded-lg border-2 border-white hover:border-dashed backdrop-blur hover:border-4 items-center p-2 col-span-4 hover:scale-110 transition-all" v-if="imageData" v-bind:src="imageData" />
     <div class="col-span-6 p-2">
-      <span :style="{color: mainTextColor}">Prompt: </span>
+    <img src="../assets/meta_img.png">
+    <span :style="{color: mainTextColor}">Prompt: </span>
     <input class="w-full py-2 px-1 border-2" type="text" v-model="prompt" placeholder="Enter a prompt">
     <br>
     <span :style="{color: mainTextColor}">HuggingFace API Key: </span>
     <input class="w-full py-2 px-1 border-2" :type="showAPIKey ? 'text' : 'password'" v-model="hfAPIKey" placeholder="Enter a Valid HuggingFace API Key">
-    <button :style="buttonStyle" class="py-2 px-1 rounded transition-all" @click="toggleAPIKeyVisibility">
+    <button :style="buttonStyle" class="py-2 hover:scale-105 px-1 rounded transition-all" @click="toggleAPIKeyVisibility">
       {{ showAPIKey ? 'Hide Key' : 'Show Key' }}
     </button>
-    <br>
-    <button @click="fetchImage" :style="buttonStyle" class="py-2 px-1 rounded transition-all">Image Gen</button>
-    <button @click="downloadImage" :style="buttonStyle" class="py-2 px-1 rounded transition-all">Image Download</button>
-    <button @click="generateRandomPrompt" :style="buttonStyle" class="py-2 px-1 rounded transition-all">Random Prompt</button>
-    <br>
-    <div v-if="isLoading" class="loading-container" :style="loadingStyle">
-      <p :style="{ backgroundColor: mainBackgrundColor, color: mainTextColor }">Loading...</p>
-    </div>
+    <button @click="fetchImage" :style="buttonStyle" class="hover:scale-105 py-2 px-1 rounded transition-all">Image Gen</button>
+    <button @click="downloadImage" :style="buttonStyle" class="py-2 px-1 hover:scale-105 rounded transition-all">Image Download</button>
+    <button @click="generateRandomPrompt" :style="buttonStyle" class="py-2 px-1 hover:scale-105 rounded transition-all">Random Prompt</button>
+    <span v-if="isLoading" class="py-2 px-1 loading-container" :style="{ backgroundColor: mainBackgrundColor, color: mainTextColor, loadingStyle}">Loading...
+    </span>
     <hr class="p-2">
     <div>
       <div v-if="mainColor" class="">
