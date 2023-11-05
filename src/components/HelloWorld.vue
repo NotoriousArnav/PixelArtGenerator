@@ -1,10 +1,11 @@
 <template>
   <div class="m-4 p-2 hello">
     <h1 :style="{ color: mainTextColor }" class="text-4xl">Pixel Art Generator</h1>
+    <img src="../assets/meta_img.png" class="sm:hidden block">
     <div class="sm:grid sm:grid-cols-10">
     <img :alt="prompt" @load="grabColors" class="text-center rounded-lg border-2 border-white hover:border-dashed backdrop-blur hover:border-4 items-center p-2 col-span-4 hover:scale-110 transition-all" v-if="imageData" v-bind:src="imageData" />
     <div class="col-span-6 p-2">
-    <img src="../assets/meta_img.png">
+    <img src="../assets/meta_img.png" class="sm:block hidden">
     <span :style="{color: mainTextColor}">Prompt: </span>
     <input class="w-full py-2 px-1 border-2" type="text" v-model="prompt" placeholder="Enter a prompt">
     <br>
