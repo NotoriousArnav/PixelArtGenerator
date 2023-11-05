@@ -35,6 +35,7 @@
       <p class="text-lg font-semibold">Author:</p>
       <p><a class="hover:underline hover:text-blue-500 transition-all" href="https://github.com/NotoriousArnav" target="_blank">github.com/NotoriousArnav</a></p>
       <p class="text-lg font-semibold mt-4">Project:</p>
+      <p><a class="hover:underline hover:text-blue-500 transition" href="https://github.com/NotoriousArnav/PixelArtGenerator">https://github.com/NotoriousArnav/PixelArtGenerator</a></p>
       <p>Made with <span class="text-red-500">❤</span> using Vue.js and HuggingFace</p>
     </div>
     </div>
@@ -52,7 +53,7 @@ export default {
       prompt: 'Penguin eating apple',
       hfAPIKey: "",
       showAPIKey: false,
-      imageData: null,
+      imageData: 'https://drive.google.com/uc?id=1QtX64mXD0AvzGOmjOXDcHQxpa5ro0f6E',
       isLoading: false,
       mainColor: null,
       mainTextColor: 'black',
@@ -180,3 +181,11 @@ export default {
   },
 }
 </script>
+
+<style>
+
+body {
+  background: url('../assets/bck.png');
+}
+
+</style>
