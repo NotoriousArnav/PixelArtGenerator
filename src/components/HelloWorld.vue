@@ -26,11 +26,11 @@
         <p class="p-4 rounded-md mb-4" :style="{ backgroundColor: mainBackgrundColor, color: mainTextColor }">Main Color: {{ mainColor }}</p>
       </div>
     </div>
-    <hr class="p-2">
-<p class="bg-gray-200 p-4 rounded-md mb-4 text-gray-700" :style="{ backgroundColor: mainBackgrundColor, color: mainTextColor }">
+    <hr v-if="hfAPIKey == null" class="p-2">
+<p v-if="hfAPIKey == null" class="bg-gray-200 p-4 rounded-md mb-4 text-gray-700" :style="{ backgroundColor: mainBackgrundColor, color: mainTextColor }">
     Goto <a href="https://huggingface.co" class="text-blue-500 hover:underline transition-all">https://huggingface.co</a> and Generate your own API Key.
 </p>
-    <hr class="p-2">
+    <hr v-if="hfAPIKey == null" class="p-2">
 <p class="bg-gray-200 p-4 rounded-md mb-4 text-gray-700" :style="{ backgroundColor: mainBackgrundColor, color: mainTextColor }">
     The image generation model utilized in this application is StableDiffusion, available through the HuggingFace repository. You can explore this powerful model by visiting the HuggingFace repository at <a href="https://huggingface.co/nerijs/pixel-art-xl" class="text-blue-500 hover:underline transition-all">https://huggingface.co/nerijs/pixel-art-xl</a> or simply by searching for 'nerijs/pixel-art-xl.' Be sure to check out these resources to discover more about the model and its capabilities.
 </p>
@@ -55,7 +55,7 @@ export default {
   data () {
     return {
       prompt: 'Colorful sunset over the mountains',
-      hfAPIKey: "",
+      hfAPIKey: null,
       showAPIKey: false,
       imageData: 'https://drive.google.com/uc?id=1QtX64mXD0AvzGOmjOXDcHQxpa5ro0f6E',
       isLoading: false,
