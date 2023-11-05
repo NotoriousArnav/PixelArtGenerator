@@ -28,6 +28,10 @@
     </div>
     <hr class="p-2">
 <p class="bg-gray-200 p-4 rounded-md mb-4 text-gray-700" :style="{ backgroundColor: mainBackgrundColor, color: mainTextColor }">
+    Goto <a href="https://huggingface.co" class="text-blue-500 hover:underline transition-all">https://huggingface.co</a> and Generate your own API Key.
+</p>
+    <hr class="p-2">
+<p class="bg-gray-200 p-4 rounded-md mb-4 text-gray-700" :style="{ backgroundColor: mainBackgrundColor, color: mainTextColor }">
     The image generation model utilized in this application is StableDiffusion, available through the HuggingFace repository. You can explore this powerful model by visiting the HuggingFace repository at <a href="https://huggingface.co/nerijs/pixel-art-xl" class="text-blue-500 hover:underline transition-all">https://huggingface.co/nerijs/pixel-art-xl</a> or simply by searching for 'nerijs/pixel-art-xl.' Be sure to check out these resources to discover more about the model and its capabilities.
 </p>
 <hr>
@@ -50,7 +54,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      prompt: 'Penguin eating apple',
+      prompt: 'Colorful sunset over the mountains',
       hfAPIKey: "",
       showAPIKey: false,
       imageData: 'https://drive.google.com/uc?id=1QtX64mXD0AvzGOmjOXDcHQxpa5ro0f6E',
@@ -66,32 +70,6 @@ export default {
         backgroundColor: 'rgba(255, 255, 255, 0.5)',
       },
     }
-  },
-  created() {
-    // Generate a random prompt on component creation
-    const randomPrompts = [
-      'Astronaut riding a horse',
-      'Colorful sunset over the mountains',
-      'Underwater cityscape',
-      'Mystical forest with fireflies',
-      'Galaxy far, far away',
-      "Enchanted forest at twilight",
-      "City skyline with neon lights",
-      "Majestic dragon in a hidden cave",
-      "Underwater coral reef paradise",
-      "Steampunk airship above the clouds",
-      "Vibrant festival in a magical realm",
-      "Haunted castle on a moonlit hill",
-      "Ancient ruins in a dense jungle",
-      "Epic space battle among the stars",
-      "Time-traveling adventurer's journey",
-    ];
-    const randomIndex = Math.floor(Math.random() * randomPrompts.length);
-    this.prompt = randomPrompts[randomIndex];
-
-    // Auto-execute the method
-    this.fetchImage();
-    this.grabColors();
   },
   methods: {
     toggleAPIKeyVisibility() {
@@ -126,13 +104,23 @@ export default {
     },
     generateRandomPrompt() {
       const randomPrompts = [
-        'Astronaut riding a horse',
-        'Colorful sunset over the mountains',
-        'Underwater cityscape',
-        'Mystical forest with fireflies',
-        'Galaxy far, far away',
-        // Add more random prompts as needed
-      ];
+      'Astronaut riding a horse',
+      'Colorful sunset over the mountains',
+      'Underwater cityscape',
+      'Mystical forest with fireflies',
+      'Galaxy far, far away',
+      "Enchanted forest at twilight",
+      "City skyline with neon lights",
+      "Majestic dragon in a hidden cave",
+      "Underwater coral reef paradise",
+      "Steampunk airship above the clouds",
+      "Vibrant festival in a magical realm",
+      "Haunted castle on a moonlit hill",
+      "Ancient ruins in a dense jungle",
+      "Epic space battle among the stars",
+      "Time-traveling adventurer's journey",
+    ];
+
 
       const randomIndex = Math.floor(Math.random() * randomPrompts.length);
       this.prompt = randomPrompts[randomIndex];
