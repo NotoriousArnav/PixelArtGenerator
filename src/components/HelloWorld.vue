@@ -2,7 +2,7 @@
   <div class="m-4 p-2 hello">
     <h1 :style="{ color: mainTextColor }" class="text-4xl">Pixel Art Generator</h1>
     <div class="sm:grid sm:grid-cols-10">
-    <img @load="grabColors" class="text-center items-center p-2 col-span-4" v-if="imageData" v-bind:src="imageData" />
+    <img :alt="prompt" @load="grabColors" class="text-center items-center p-2 col-span-4" v-if="imageData" v-bind:src="imageData" />
     <div class="col-span-6 p-2">
       <span :style="{color: mainTextColor}">Prompt: </span>
     <input class="w-full py-2 px-1 border-2" type="text" v-model="prompt" placeholder="Enter a prompt">
